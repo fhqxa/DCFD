@@ -86,22 +86,6 @@ python main.py -d <dataset> -m <model> [options...]
 | `cifar100_ir10` | CIFAR-100-LT (ρ=10) | Imbalance ratio 10 |
 | `isic2018` | ISIC 2018 | Skin lesion classification |
 
-### Available model configs
-
-| Config name | Backbone | Notes |
-|-------------|----------|-------|
-| `clip_vit_b16` | CLIP ViT-B/16 | Standard baseline |
-| `clip_vit_b16_dcfd` | CLIP ViT-B/16 + DCFD | With DINO-CLIP fusion |
-| `clip_vit_l14` | CLIP ViT-L/14 | Large model |
-| `clip_vit_l14@336px` | CLIP ViT-L/14@336px | High resolution |
-| `clip_rn50` | CLIP RN50 | ResNet backbone |
-| `clip_rn101` | CLIP RN101 | ResNet backbone |
-| `in21k_vit_b16` | IN21K ViT-B/16 | ImageNet-21K pre-trained |
-| `in21k_vit_b16@384px` | IN21K ViT-B/16@384px | ImageNet-21K, 384px |
-| `in21k_vit_l16` | IN21K ViT-L/16 | Large ViT |
-
-*(Zero-shot variants prefixed with `zsclip_` are also available for baseline comparison.)*
-
 ## Datasets
 
 ### Prepare data
