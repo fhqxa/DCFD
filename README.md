@@ -79,7 +79,6 @@ python main.py -d <dataset> -m <model> [options...]
 | Config name | Dataset | Notes |
 |-------------|---------|-------|
 | `imagenet_lt` | ImageNet-LT | 1000 classes, long-tailed |
-| `places_lt` | Places-LT | 365 scene categories |
 | `inat2018` | iNaturalist 2018 | Fine-grained species (8142 classes) |
 | `cifar100_ir100` | CIFAR-100-LT (ρ=100) | Imbalance ratio 100 |
 | `cifar100_ir50` | CIFAR-100-LT (ρ=50) | Imbalance ratio 50 |
@@ -89,8 +88,7 @@ python main.py -d <dataset> -m <model> [options...]
 ## Datasets
 
 ### Prepare data
-
-Download [Places](http://places2.csail.mit.edu/download.html), [ImageNet](http://image-net.org/index), [iNaturalist 2018](https://github.com/visipedia/inat_comp/tree/master/2018), and [ISIC 2018](https://challenge2018.isic-archive.com/). Organize as follows:
+Organize as follows:
 
 **ImageNet-LT**
 ```
@@ -107,21 +105,6 @@ Path/To/Dataset/
 │   └── ...
 ├── classnames.txt
 └── fine2coarse.json
-```
-
-**Places-LT**
-```
-Path/To/Dataset/
-├── train/
-│   ├── airfield/
-│   │   ├── 00000001.jpg
-│   │   └── ...
-│   └── ...
-└── val/
-    ├── airfield/
-    │   ├── Places365_val_00000435.jpg
-    │   └── ...
-    └── ...
 ```
 
 **iNaturalist 2018**
@@ -157,9 +140,6 @@ Update the `root` path in the corresponding YAML file under `configs/data/`.
 ```bash
 # DCFD on ImageNet-LT
 python main.py -d imagenet_lt -m clip_vit_b16_dcfd
-
-# DCFD on Places-LT
-python main.py -d places_lt -m clip_vit_b16_dcfd
 
 # DCFD on iNaturalist 2018
 python main.py -d inat2018 -m clip_vit_b16_dcfd
