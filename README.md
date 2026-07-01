@@ -9,6 +9,8 @@ DCFD (Distribution Calibration via Foreground Decoupling) is a unified framework
 
 DCFD provides a flexible interface that supports various backbones, parameter-efficient fine-tuning (PEFT) strategies, head initialization methods, loss functions, and classifier types.
 
+![](fig.png)
+
 ---
 
 ## Requirements
@@ -53,7 +55,7 @@ Most experiments can be reproduced with a single GPU (20 GB memory). Larger back
 
 ```bash
 # CIFAR-100-LT (imbalance ratio = 100)
-python main.py -d cifar100_ir100 -m clip_vit_b16_dcfd note our_0.7
+python main.py -d cifar100_ir100 -m clip_vit_b16_dcfd
 ```
 
 This automatically downloads CIFAR-100 and runs DCFD with AdaptFormer (default PEFT) and foreground decoupling threshold τ=0.7.
@@ -170,21 +172,18 @@ Update the `root` path in the corresponding YAML file under `configs/data/`.
 
 ```bash
 # DCFD on ImageNet-LT
-python main.py -d imagenet_lt -m clip_vit_b16_dcfd note our_0.7
-python main.py -d imagenet_lt -m clip_vit_b16_dcfd note our_0.7 test_only True tte True
+python main.py -d imagenet_lt -m clip_vit_b16_dcfd
 
 # DCFD on Places-LT
-python main.py -d places_lt -m clip_vit_b16_dcfd note our_0.7
-python main.py -d places_lt -m clip_vit_b16_dcfd note our_0.7 test_only True tte True
+python main.py -d places_lt -m clip_vit_b16_dcfd
 
 # DCFD on iNaturalist 2018
-python main.py -d inat2018 -m clip_vit_b16_dcfd note our_0.7 num_epochs 20
-python main.py -d inat2018 -m clip_vit_b16_dcfd note our_0.7 num_epochs 20 test_only True tte True
+python main.py -d inat2018 -m clip_vit_b16_dcfd
 
 # DCFD on CIFAR-100-LT
-python main.py -d cifar100_ir100 -m clip_vit_b16_dcfd note our_0.7
-python main.py -d cifar100_ir50 -m clip_vit_b16_dcfd note our_0.7
-python main.py -d cifar100_ir10 -m clip_vit_b16_dcfd note our_0.7
+python main.py -d cifar100_ir100 -m clip_vit_b16_dcfd
+python main.py -d cifar100_ir50 -m clip_vit_b16_dcfd
+python main.py -d cifar100_ir10 -m clip_vit_b16_dcfd
 ```
 ---
 
