@@ -1,0 +1,30 @@
+backbone: "CLIP-ViT-B/16"
+resolution: 224
+tll_projection: True
+
+output_dir: null
+print_freq: 10
+
+seed: 0
+deterministic: True
+gpu: 0
+num_workers: 0
+prec: "amp"
+
+num_epochs: 20
+batch_size: 128
+micro_batch_size: 32
+lr: 0.01
+weight_decay: 5e-4
+momentum: 0.9
+loss_type: "FUSION"  # 使用复杂特征融合损失
+#classifier: "CosineClassifier"
+classifier: "SeparatedLearnableClassifier"
+
+init_head: "text_feat"
+prompt: ensemble
+adaptformer:  True
+#tte: True
+expand: 24
+
+
